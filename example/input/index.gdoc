@@ -1,0 +1,827 @@
+/*
+ * Created Date: Friday June 30th 2023
+ * Author: Lilith
+ * -----
+ * Last Modified: Tuesday July 18th 2023 4:48:24 pm
+ * Modified By: Lilith (definitelynotagirl115169@gmail.com)
+ * -----
+ * Copyright (c) 2023 DefinitelyNotAGirl@github
+ * 
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the "Software"), to deal in the Software without
+ * restriction, including without limitation the rights to use, copy,
+ * modify, merge, publish, distribute, sublicense, and/or sell copies
+ * of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ */
+
+//line comment
+
+#embed file geos-core modules/EFI/src/ACPI_1.cxx
+
+#related file geos-core modules/EFI/src/ACPI_1.cxx
+#related repo geos-core
+
+#link uint64_t* https://github.com/DefinitelyNotAGirl/GEOS/issues/3
+
+#out index
+
+#title page-test-title
+
+#embed repo geos-core
+
+<member>
+    <name>DATA_MEM_OFFSET</name>
+    <type>
+        <attributes>
+            const
+        </attributes>
+        <name>
+            uint64_t
+        </name>
+    </type>
+    <desc>
+        this is not a description of the memory allocation function in the test module
+    </desc>
+</member>
+
+<member>
+    <name>DATA</name>
+    <type>
+        <name>
+            void*
+        </name>
+    </type>
+    <desc>
+        this is not a description of the memory allocation function in the test module
+    </desc>
+</member>
+
+<function>
+    <name>realloc</name>
+    <namespace>klib::test::test2</namespace>
+    <desc>
+        this is not a description of the memory allocation function in the test module
+    </desc>
+    <overload>
+        <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+        <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+        <type><attributes>const</attributes><name>void*</name></type>
+        <param>
+            <name>test</name>
+            <type>
+                <name>
+                    uint32_t*
+                </name>
+            </type>
+            <type>
+                <name>
+                    uint64_t
+                </name>
+            </type>
+        </param>
+        <param>
+            <name>testb</name>
+            <type>
+                <name>
+                    uint32_t*
+                </name>
+            </type>
+        </param>
+        <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+    </overload>
+    <overload>
+        <attributes>const</attributes>
+        <type><name>void*</name></type>
+        <param>
+            <name>test</name>
+            <type>
+                <name>void*</name>
+            </type>
+        </param>
+        <comment>
+            <author>Lilith</author> 
+            <date>Saturday 1. July 2023</date>  
+            this function has way too many attributes 
+        </comment>
+    </overload>
+</function>
+
+<function>
+    <name>malloc</name>
+    <namespace>klib::test::test2</namespace>
+    <desc>
+        this is not a description of the memory allocation function in the test module
+    </desc>
+    <overload>
+        <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+        <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+        <type><attributes>const</attributes><name>void*</name></type>
+        <param>
+            <name>test</name>
+            <type>
+                <name>
+                    uint32_t*
+                </name>
+            </type>
+        </param>
+        <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+    </overload>
+    <overload>
+        <attributes>const</attributes>
+        <type><name>void*</name></type>
+        <param>
+            <name>test</name>
+            <type>
+                <name>void*</name>
+            </type>
+        </param>
+        <comment>
+            <author>Lilith</author> 
+            <date>Saturday 1. July 2023</date>  
+            this function has way too many attributes 
+        </comment>
+    </overload>
+</function>
+
+#subcat sub-category-name
+
+<namespace>global</namespace>
+
+<class>
+    <attributes>
+        deprecated
+    </attributes>
+    <name>classname</name>
+    <desc>
+        test class name for the test module in the test module
+    </desc>
+    <function>
+        <name>constructor</name>
+        <param>
+            <name>data</name>
+            <type>
+                <name>
+                    void*
+                </name>
+            </type>
+        </param>
+        <param>
+            <name>test</name>
+            <type>
+                <name>
+                    uint32_t*
+                </name>
+            </type>
+        </param>
+        <param>
+            <name>testb</name>
+            <type>
+                <name>
+                    uint32_t*
+                </name>
+            </type>
+        </param>
+        <type><name>$$CONSTRUCTOR</name></type>
+        <comment> 
+            <author>Lilith</author>
+            <date>Saturday 1. July 2023</date> 
+            this class is due to be removed before kernel v2.65 
+        </comment>
+    </function>
+    <function>
+        <name>realloc</name>
+        <namespace>klib::test::test2</namespace>
+        <desc>
+            this is not a description of the memory allocation function in the test module
+        </desc>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+            </param>
+            <param>
+                <name>testb</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+        <overload>
+            <issue>https://github.com/DefinitelyNotAGirl/GEOS/issues/3</issue>
+            <attributes>static const inline virtual volatile deprecated noreturn</attributes>
+            <type><attributes>const</attributes><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>
+                        uint32_t*
+                    </name>
+                </type>
+                <type>
+                    <name>
+                        uint64_t
+                    </name>
+                </type>
+            </param>
+            <comment> <author>Lilith</author> <date>Saturday 1. July 2023</date>  test comment 1 </comment>
+        </overload>
+        <overload>
+            <attributes>const</attributes>
+            <type><name>void*</name></type>
+            <param>
+                <name>test</name>
+                <type>
+                    <name>void*</name>
+                </type>
+            </param>
+            <comment>
+                <author>Lilith</author> 
+                <date>Saturday 1. July 2023</date>  
+                this function has way too many attributes 
+            </comment>
+        </overload>
+    </function>
+</class>

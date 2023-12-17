@@ -1,0 +1,25 @@
+{
+  "name": "geosdoc-language-support",
+  "displayName": "geosDoc language support",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.79.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "geosdoc",
+      "aliases": ["geos doc", "geosdoc"],
+      "extensions": [".gdoc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "geosdoc",
+      "scopeName": "source.geosdoc",
+      "path": "./syntaxes/geosdoc.tmLanguage.json"
+    }]
+  }
+}

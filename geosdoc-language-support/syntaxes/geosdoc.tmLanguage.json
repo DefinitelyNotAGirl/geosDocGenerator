@@ -1,0 +1,498 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.geosdoc",
+	"patterns": [
+		{"include": "#comments"},
+		{"include": "#directives"},
+		{"include": "#objects"},
+		{"include": "#misc"}
+	],
+	"repository": {
+		"comments" : {
+			"patterns": [
+				{
+					"name": "comment.block.geosdoc",
+					"begin": "/\\*",
+            		"end" : "\\*/"
+				},
+				{
+					"name": "comment.line.double.geosdoc",
+            		"begin":"//",
+					"end": "$"
+				}
+			]
+		},
+		"directives": {
+			"patterns": [
+				{"include": "#directive-related"},
+				{"include": "#directive-embed"},
+				{"include": "#directive-set"},
+				{"include": "#directive-main"},
+				{"include": "#directive-sub"},
+				{"include": "#directive-out"},
+				{"include": "#directive-arith1"},
+				{"include": "#directive-arith2"},
+				{"include": "#directive-var"},
+				{"include": "#directive-jmp"},
+				{"include": "#directive-cmp"},
+				{"include": "#directive-sym"},
+				{"include": "#directive-error"},
+				{"include": "#directive-include"},
+				{"include": "#directive-msg"},
+				{"include": "#directive-dep"},
+				{"include": "#directive-link"}
+			]
+		},
+		"objects": {
+			"patterns": [
+				{"include": "#object-function"},
+				{"include": "#object-class"},
+				{"include": "#object-member"},
+				{"include": "#object-type"}
+			]
+		},
+		"misc": {
+			"patterns": [
+				{"include": "#namespace-selector"}
+			]
+		},
+		"repo-file": {
+			"name":"variable.language.geosdoc",
+			"begin": " ",
+			"end": "$",
+			"patterns": [
+				{"include":"#restPath"}
+			]
+		},
+		"repo": {
+			"name":"variable.language.geosdoc",
+			"begin": "",
+			"end": "$"
+		},
+		"file-selector": {
+			"name":"support.class.geosdoc",
+			"begin": "file",
+			"end": "$",
+			"patterns": [
+				{"include": "#repo-file"}
+			]
+		},
+		"repo-selector": {
+			"name":"support.class.geosdoc",
+			"begin": "repo",
+			"end": "$",
+			"patterns": [
+				{"include": "#repo"}
+			]
+		},
+		"directive-related": {
+			"name": "keyword.other.geosdoc",
+			"begin": "#related",
+			"end": "$",
+			"patterns": [
+				{"include": "#file-selector"},
+				{"include": "#repo-selector"}
+			]
+		},
+		"directive-link": {
+			"name": "keyword.other.geosdoc",
+			"begin": "#link",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "variable.name",
+					"begin": " ",
+					"end": "$"
+				}
+			]
+		},
+		"directive-sym": {
+			"name": "keyword.control",
+			"begin": "#sym",
+			"end": "$",
+			"patterns": [
+				{"include":"#single-symbol-selector"}
+			]
+		},
+		"directive-embed": {
+			"name": "keyword.other",
+			"begin": "#embed",
+			"end": "$",
+			"patterns": [
+				{"include": "#file-selector"},
+				{"include": "#repo-selector"}
+			]
+		},
+		"directive-main": {
+			"name": "keyword.other",
+			"begin": "#title",
+			"end": "$",
+			"patterns": [
+				{
+					"name":"string.quoted.double",
+					"begin": "",
+					"end": "$"
+				}
+			]
+		},
+		"restPath" : {
+			"name":"string.quoted.double",
+			"begin": " ",
+			"end": "$",
+			"patterns": [
+        	    {
+					"name": "constant.character.escape",
+					"match": "/"
+				}
+			]
+		},
+		"single-symbol-selector": {
+			"name": "entity.name.function",
+			"begin": " ",
+			"end": "( |$)"
+		},
+		"double-opperand-selector": {
+			"name": "variable.name",
+			"begin": " ",
+			"end": "( |$)",
+			"patterns": [
+				{
+					"name": "variable.name",
+					"begin": " ",
+					"end": "( |$)"
+				}
+			]
+		},
+		"directive-sub": {
+			"name": "keyword.other",
+			"begin": "#subcat",
+			"end": "$",
+			"patterns": [
+				{
+					"name":"string.quoted.double",
+					"begin": "",
+					"end": "$"
+				}
+			]
+		},
+		"directive-arith1": {
+			"name": "entity.name.function",
+			"begin": "(#inc|#dec)",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "variable.name",
+					"begin": " ",
+					"end": "( |$)"
+				}
+			]
+		},
+		"directive-jmp": {
+			"name": "keyword.control",
+			"begin": "(#jg|#jge|#jl|#jle|#je|#jne|#jz|#jnz|#jmp|#goto|#jump)",
+			"end": "$",
+			"patterns": [
+				{"include":"#single-symbol-selector"}
+			]
+		},
+		"directive-cmp": {
+			"name": "keyword.control",
+			"begin": "#cmp",
+			"end": "$",
+			"patterns": [
+				{"include":"#double-opperand-selector"}
+			]
+		},
+		"directive-arith2": {
+			"name": "entity.name.function",
+			"begin": "(#add|#sub|#mul|#div|#mod|#mov)",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "variable.name",
+					"begin": " ",
+					"end": "( |$)",
+					"patterns": [
+						{
+							"name": "constant.numeric",
+							"begin": " 0x",
+							"end": "( |$)"
+						},
+						{
+							"name": "variable.name",
+							"begin": " ",
+							"end": "( |$)"
+						}
+					]
+				}
+			]
+		},
+		"directive-out": {
+			"name": "keyword.other.geosdoc",
+			"begin": "#out",
+			"end": "$",
+			"patterns": [
+				{"include":"#restPath"}
+			]
+		},
+		"directive-set": {
+			"name": "keyword.other",
+			"begin": "#set",
+			"end": "$",
+			"patterns": [
+				{
+					"name":"support.class.geosdoc",
+					"match": "\\b(text)\\b"
+				},
+				{
+					"name":"variable.language.geosdoc",
+					"match": "\\b(size|style)\\b"
+				},
+				{
+					"name":"constant.numeric",
+					"match": "\\b(XL|L|M|S|XS|extra-large|large|medium|small|extra-small)\\b"
+				},
+				{
+					"name":"constant.language",
+					"match": "\\b(normal,warning)\\b"
+				}
+			]
+		},
+		"directive-var" : {
+			"name": "keyword.operator.new",
+			"begin": "(#var|#const)",
+			"end": "( |$)",
+			"patterns": [
+				{"include": "#double-opperand-selector"}
+			]
+		},
+		"directive-error" : {
+			"name": "keyword.control",
+			"begin": "(#err|#error|#exit|#fatal)",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "string.quoted.double",
+					"begin" : " ",
+                    "end" : "$"
+				}
+			]
+		},
+		"directive-msg" : {
+			"name": "keyword.control",
+			"begin": "(#msg|#info|#print|#log|#message)",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "string.quoted.double",
+					"begin" : " ",
+                    "end" : "$"
+				}
+			]
+		},
+		"directive-dep" : {
+			"name": "keyword.other",
+			"begin": "(#dep|#depend|#dependency)",
+			"end": "$",
+			"patterns": [
+				{
+					"name": "string.quoted.double",
+					"begin" : " ",
+                    "end" : "$"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.geosdoc",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.geosdoc",
+					"match": "\\\\."
+				}
+			]
+		},
+		"param-name-selector": {
+			"name": "variable.parameter.geosdoc",
+			"begin": "<name>",
+			"end": "</name>"
+		},
+		"member-name-selector": {
+			"name": "variable.name.geosdoc",
+			"begin": "<name>",
+			"end": "</name>"
+		},
+		"function-name-selector": {
+			"name": "entity.name.function.geosdoc",
+			"begin": "<name>",
+			"end": "</name>"
+		},
+		"class-name-selector": {
+			"name": "entity.name.class.geosdoc",
+			"begin": "<name>",
+			"end": "</name>"
+		},
+		"type-selector": {
+			"name": "storage.type.geosdoc",
+			"begin": "<type>",
+			"end": "</type>"
+		},
+		"comment-selector": {
+			"name": "comment.block.geosdoc",
+			"begin": "<comment>",
+			"end": "</comment>",
+			"patterns": [
+				{"include": "#author-selector"},
+				{"include": "#date-selector"}
+			]
+		},
+		"date-selector": {
+			"name": "string.quoted.geosdoc",
+            "begin": "<date",
+			"end": "</date>"
+		},
+		"author-selector": {
+			"name": "string.quoted.geosdoc",
+            "begin": "<author>",
+			"end": "</author>"
+		},
+		"desc-selector": {
+			"name": "string.quoted.geosdoc",
+            "begin": "<desc>",
+			"end": "</desc>"
+		},
+		"namespace-selector": {
+			"name": "entity.name.section",
+            "begin": "<namespace>",
+			"end": "</namespace>"
+		},
+		"cl-attribute-selector": {
+			"name": "keyword.other.geosdoc",
+			"match": "\\b(deprecated|packed)\\b"
+		},
+		"misc-attribute-selector": {
+			"name": "keyword.other.geosdoc",
+			"match": "\\b(private|public|protected|extern|unused)\\b"
+		},
+		"storage-attribute-selector": {
+			"name": "storage.modifier.geosdoc",
+			"match": "\\b(static|const|volatile|constexpr)\\b"
+		},
+		"func-attribute-selector": {
+			"name": "storage.modifier.geosdoc",
+			"match": "\\b(deprecated|noreturn|inline|virtual)\\b"
+		},
+		"attribute-selector": {
+			"begin": "<attributes>",
+			"end": "</attributes>",
+			"patterns": [
+				{"include": "#storage-attribute-selector"},
+				{"include": "#misc-attribute-selector"}
+			]
+		},
+		"function-attribute-selector": {
+			"begin": "<attributes>",
+			"end": "</attributes>",
+			"patterns": [
+				{"include": "#func-attribute-selector"},
+				{"include": "#storage-attribute-selector"},
+				{"include": "#misc-attribute-selector"}
+			]
+		},
+		"class-attribute-selector": {
+			"begin": "<attributes>",
+			"end": "</attributes>",
+			"patterns": [
+				{"include": "#cl-attribute-selector"}
+			]
+		},
+		"object-function-oveload": {
+			"name": "entity.name.function.geosdoc",
+            "begin": "<overload>",
+            "end": "</overload>",
+			"patterns" : [
+				{
+					"name": "variable.parameter.geosdoc",
+                    "begin": "<param>",
+                    "end": "</param>",
+					"patterns": [
+						{"include": "#param-name-selector"},
+                        {"include": "#type-selector"},
+                        {"include": "#comment-selector"},
+						{"include": "#attribute-selector"},
+						{"include": "#desc-selector"}
+					]
+				},
+				{"include": "#type-selector"},
+				{"include": "#comment-selector"},
+				{"include": "#function-attribute-selector"},
+				{"include": "#desc-selector"}
+			]
+		},
+		"object-member": {
+			"name": "variable.name",
+			"begin": "<member>",
+			"end": "</member>",
+			"patterns": [
+				{"include": "#param-name-selector"},
+				{"include": "#type-selector"},
+				{"include": "#comment-selector"},
+				{"include": "#attribute-selector"},
+				{"include": "#desc-selector"},
+				{"include": "#namespace-selector"}
+			]
+		},
+		"object-function": {
+			"name": "entity.name.function.geosdoc",
+            "begin": "<function>",
+            "end": "</function>",
+			"patterns" : [
+				{
+					"name": "variable.parameter.geosdoc",
+                    "begin": "<param>",
+                    "end": "</param>",
+					"patterns": [
+						{"include": "#param-name-selector"},
+                        {"include": "#type-selector"},
+                        {"include": "#comment-selector"},
+						{"include": "#attribute-selector"},
+						{"include": "#desc-selector"}
+					]
+				},
+				{"include": "#object-function-oveload"},
+				{"include": "#function-name-selector"},
+				{"include": "#type-selector"},
+				{"include": "#comment-selector"},
+				{"include": "#function-attribute-selector"},
+				{"include": "#desc-selector"},
+				{"include": "#namespace-selector"}
+			]
+		},
+		"object-class": {
+			"name": "entity.name.class.geosdoc",
+            "begin": "(<class>|<struct>)",
+            "end": "(</class>|</struct>)",
+			"patterns": [
+				{
+					"name": "variable.name.geosdoc",
+                    "begin": "<member>",
+                    "end": "</member>",
+					"patterns": [
+						{"include": "#member-name-selector"},
+                        {"include": "#type-selector"},
+                        {"include": "#comment-selector"},
+						{"include": "#attribute-selector"},
+						{"include": "#desc-selector"}
+					]
+				},
+				{"include": "#object-function"},
+				{"include": "#comment-selector"},
+				{"include": "#class-name-selector"},
+				{"include": "#class-attribute-selector"},
+				{"include": "#desc-selector"},
+				{"include": "#namespace-selector"}
+			]
+		}
+	}
+}
